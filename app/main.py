@@ -49,6 +49,18 @@ def main():
                         jump = 1
                     else:
                         print("BANG ! null")
+                elif c=='<':
+                    if line[w:w+2] == '<=':
+                        print("LESS_EQUAL <= null")
+                        jump = 1
+                    else:
+                        print("LESS < null")
+                elif c=='>':
+                    if line[w:w+2] == '>=':
+                        print("GREATER_EQUAL >= null")
+                        jump = 1
+                    else:
+                        print("GREATER > null")
                 
                 else:
                     print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
