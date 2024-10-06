@@ -22,6 +22,19 @@ def main():
                 print(f"{'LEFT' if c=='(' else 'RIGHT'}_PAREN {c} null")
             if c in ['{','}']:
                 print(f"{'LEFT' if c=='{' else 'RIGHT'}_BRACE {c} null")
+            if c=='*':
+                print("STAR * null")
+            if c=='.':
+                print("DOT . null")
+            if c==',':
+                print("COMMA , null")
+            if c=='+':
+                print("PLUS + null")
+            if c=='-':
+                print("MINUS - null")
+            if c==';':
+                print("SEMICOLON ; null")
+
     print("EOF  null")
 
 
