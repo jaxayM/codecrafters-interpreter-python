@@ -15,8 +15,12 @@ def main():
 
     with open(filename) as file:
         error = False
+        jump = 0
         for i, line in enumerate(file):
-            for c in line:
+            for w, c in enumerate(line):
+                if jump:
+                    jump = jump - 1
+                    continue
                 if c in ['(',')']:
                     print(f"{'LEFT' if c=='(' else 'RIGHT'}_PAREN {c} null")
                 elif c in ['{','}']:
@@ -33,6 +37,12 @@ def main():
                     print("MINUS - null")
                 elif c==';':
                     print("SEMICOLON ; null")
+                elif c=='=':
+                    if line[w:w+2] == '==':
+                        print("EQUAL_EQUAL == null")
+                        jump = 1
+                    else:
+                        print("EQUAL = null")
                 
                 else:
                     print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
