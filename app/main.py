@@ -35,7 +35,7 @@ def main():
                     print("SEMICOLON ; null")
                 
                 else:
-                    print(f"[line {i}] Error: Unexpected character: {c}", file=sys.stderr)
+                    print(f"[line {i+1}] Error: Unexpected character: {c}", file=sys.stderr)
                     error = True
 
     print("EOF  null")
