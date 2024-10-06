@@ -20,6 +20,8 @@ def main():
         for c in file_contents:
             if c in ['(',')']:
                 print(f"{'LEFT' if c=='(' else 'RIGHT'}_PAREN {c} null")
+            if c in ['{','}']:
+                print(f"{'LEFT' if c=='{' else 'RIGHT'}_PAREN {c} null")
     print("EOF  null")
 
 
