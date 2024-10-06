@@ -34,7 +34,7 @@ def main():
                 if c==';':
                     print("SEMICOLON ; null")
                 
-                if c in ['$','#']:
+                else:
                     print(f"[line {i}] Error: Unexpected character: {c}", file=sys.stderr)
                     error = True
 
