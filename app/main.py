@@ -21,7 +21,7 @@ def main():
             if c in ['(',')']:
                 print(f"{'LEFT' if c=='(' else 'RIGHT'}_PAREN {c} null")
             if c in ['{','}']:
-                print(f"{'LEFT' if c=='{' else 'RIGHT'}_PAREN {c} null")
+                print(f"{'LEFT' if c=='{' else 'RIGHT'}_BRACE {c} null")
     print("EOF  null")
 
 
