@@ -19,23 +19,23 @@ def main():
             for c in line:
                 if c in ['(',')']:
                     print(f"{'LEFT' if c=='(' else 'RIGHT'}_PAREN {c} null")
-                if c in ['{','}']:
+                elif c in ['{','}']:
                     print(f"{'LEFT' if c=='{' else 'RIGHT'}_BRACE {c} null")
-                if c=='*':
+                elif c=='*':
                     print("STAR * null")
-                if c=='.':
+                elif c=='.':
                     print("DOT . null")
-                if c==',':
+                elif c==',':
                     print("COMMA , null")
-                if c=='+':
+                elif c=='+':
                     print("PLUS + null")
-                if c=='-':
+                elif c=='-':
                     print("MINUS - null")
-                if c==';':
+                elif c==';':
                     print("SEMICOLON ; null")
                 
                 else:
-                    print(f"[line {i+1}] Error: Unexpected character: {c}", file=sys.stderr)
+                    print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
                     error = True
 
     print("EOF  null")
