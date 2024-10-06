@@ -43,6 +43,12 @@ def main():
                         jump = 1
                     else:
                         print("EQUAL = null")
+                elif c=='!':
+                    if line[w:w+2] == '!=':
+                        print("BANG_EQUAL != null")
+                        jump = 1
+                    else:
+                        print("BANG ! null")
                 
                 else:
                     print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
