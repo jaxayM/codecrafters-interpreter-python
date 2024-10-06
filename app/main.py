@@ -61,6 +61,11 @@ def main():
                         jump = 1
                     else:
                         print("GREATER > null")
+                elif c=='/':
+                    if line[w:w+2] == '//':
+                        break
+                    else:
+                        print("SLASH / null")
                 
                 else:
                     print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
