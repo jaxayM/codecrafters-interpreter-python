@@ -37,7 +37,7 @@ def main():
                     print("MINUS - null")
                 elif c==';':
                     print("SEMICOLON ; null")
-                elif c==' ' or c=='\t' or c=='\r':
+                elif c==' ' or c=='\t' or c=='\n':
                     continue
                 elif c=='=':
                     if line[w:w+2] == '==':
