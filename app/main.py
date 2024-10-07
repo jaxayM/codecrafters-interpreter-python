@@ -47,13 +47,19 @@ def main():
                         print("EQUAL = null")
                 elif c=='"':
                     string = ""
-                    for i in range(w+1, len(line)):
-                        if line[i] == '"':
-                            jump = i - w
+                    unterminated = True
+                    for j in range(w+1, len(line)):
+                        if line[j] == '"':
+                            jump = j - w
+                            unterminated = False
                             break
                         else:
-                            string = string + line[i]
-                    print(f'STRING "{string}" {string}')
+                            string = string + line[j]
+                    if unterminated:
+                        print("[line %s] Error: Unterminated string." % (i+1), file=sys.stderr)
+                        break
+                    else:
+                        print(f'STRING "{string}" {string}')
                 elif c=='!':
                     if line[w:w+2] == '!=':
                         print("BANG_EQUAL != null")
