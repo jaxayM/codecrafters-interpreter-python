@@ -45,6 +45,15 @@ def main():
                         jump = 1
                     else:
                         print("EQUAL = null")
+                elif c=='"':
+                    string = ""
+                    for i in range(w+1, len(line)):
+                        if line[i] == '"':
+                            jump = i - w
+                            break
+                        else:
+                            string = string + line[i]
+                    print(f'STRING "{string}" {string}')
                 elif c=='!':
                     if line[w:w+2] == '!=':
                         print("BANG_EQUAL != null")
