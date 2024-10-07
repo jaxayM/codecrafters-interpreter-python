@@ -57,6 +57,7 @@ def main():
                             string = string + line[j]
                     if unterminated:
                         print("[line %s] Error: Unterminated string." % (i+1), file=sys.stderr)
+                        error = True
                         break
                     else:
                         print(f'STRING "{string}" {string}')
