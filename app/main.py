@@ -9,6 +9,11 @@ def main():
     command = sys.argv[1]
     filename = sys.argv[2]
 
+    if command == "parse":
+        with open(filename) as f:
+            content = f.read()
+            print(content)
+            exit(0)
     if command != "tokenize":
         print(f"Unknown command: {command}", file=sys.stderr)
         exit(1)
