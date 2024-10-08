@@ -13,7 +13,7 @@ def main():
         print(f"Unknown command: {command}", file=sys.stderr)
         exit(1)
 
-    keywords = ["and", "bar", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"]
+    keywords = ["and", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"]
     with open(filename) as file:
         error = False
         jump = 0
