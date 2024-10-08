@@ -94,7 +94,7 @@ def main():
                     print(f'NUMBER {line[w:w+jump+1]} {float(line[w:w+jump+1])}')
                 elif c.isalpha() or c=='_':
                     for j in range(w+1, len(line)):
-                        if line[j].isalnum() or c=='_':
+                        if line[j].isalnum() or line[j]=='_':
                             jump += 1
                         else:
                             break
