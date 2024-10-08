@@ -13,6 +13,7 @@ def main():
         print(f"Unknown command: {command}", file=sys.stderr)
         exit(1)
 
+    keywords = ["and", "bar", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"]
     with open(filename) as file:
         error = False
         jump = 0
@@ -91,6 +92,16 @@ def main():
                         else:
                             break
                     print(f'NUMBER {line[w:w+jump+1]} {float(line[w:w+jump+1])}')
+                elif c.isalpha() or c=='_':
+                    for j in range(w+1, len(line)):
+                        if line[j].isalnum():
+                            jump += 1
+                        else:
+                            break
+                    kw = line[w:w+jump+1]
+                    if kw in keywords:
+                        print(f"{kw.upper()} {kw} null")
+                    else: print(f"IDENTIFIER {kw} null")
                 
                 else:
                     print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
