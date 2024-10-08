@@ -84,6 +84,13 @@ def main():
                         break
                     else:
                         print("SLASH / null")
+                elif c in map(lambda s: str(s) ,list(range(10))):
+                    for j in range(w+1, len(line)):
+                        if line[j] in map(lambda s: str(s) ,list(range(10))) or line[j] == '.':
+                            jump += 1
+                        else:
+                            break
+                    print(f'NUMBER {line[w:w+jump+1]} {float(line[w:w+jump+1])}')
                 
                 else:
                     print("[line %s] Error: Unexpected character: %s" % (i+1, c), file=sys.stderr)
