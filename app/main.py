@@ -9,12 +9,13 @@ def main():
     command = sys.argv[1]
     filename = sys.argv[2]
 
+    commands = ["parse", "tokenize"]
     if command == "parse":
         with open(filename) as f:
             content = f.read()
             print(content)
             exit(0)
-    if command != "tokenize":
+    if command not in commands:
         print(f"Unknown command: {command}", file=sys.stderr)
         exit(1)
 
