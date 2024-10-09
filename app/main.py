@@ -13,7 +13,10 @@ def main():
     if command == "parse":
         with open(filename) as f:
             content = f.read()
-            print(content)
+            if content in ["nil", "true", "false"]:
+                print(content)
+            else:
+                print(float(content))
             exit(0)
     if command not in commands:
         print(f"Unknown command: {command}", file=sys.stderr)
