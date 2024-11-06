@@ -117,7 +117,7 @@ def main():
                             jump += 1
                         else:
                             break
-                    tokens.append(Token(TokenType.NUMBER, line[w:w+jump+1]))
+                    tokens.append(Token(TokenType.NUMBER, float(line[w:w+jump+1])))
                     if command == "tokenize": print(f'NUMBER {line[w:w+jump+1]} {float(line[w:w+jump+1])}')
                 elif c.isalpha() or c=='_':
                     for j in range(w+1, len(line)):
